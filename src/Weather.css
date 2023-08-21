@@ -1,0 +1,37 @@
+.Weather form{
+    text-align: center;
+    margin-top: 10px;
+}
+.search{
+    width:35%;
+    height:42px ;
+    border-radius:20px;
+    margin-right: 10px;
+}
+.button{
+    background:#8FB9DB;
+    color : white;
+    font-size: large;
+    padding:  1% 2%;
+    border:none;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+h2,h1{
+    text-align: center;
+    margin: 0;
+    
+}
+h2{
+    font-weight: 100;
+}
+.Rain-icon{
+    text-align: center;
+}
+.Weather ul{
+    list-style: none;
+    font-weight: 500;
+    position:relative;
+    left:300px;
+}
