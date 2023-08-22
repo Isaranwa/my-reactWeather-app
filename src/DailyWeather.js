@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import "./DailyWeather.css";
 import axios from "axios";
 import ForecastWeather from "./ForecastWeather";
@@ -8,11 +8,12 @@ export default function DailyWeather(props){
     let[forecast,setForecast]=useState(null);
 
     function showForecast(response){
-        console.log(response);
         setLoaded(true);
         setForecast(response.data.daily);
     }
-   
+   useEffect(()=>{
+    setLoaded(false);
+   },[props.coordinates])
 
     if(loaded){
         return (<div className="DailyWeather">
