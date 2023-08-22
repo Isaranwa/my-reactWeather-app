@@ -2,8 +2,13 @@ import React,{useState} from "react";
 import "./Weather.css";
 import ReactAnimatedWeather from 'react-animated-weather';
 import axios from 'axios';
+import moment from "moment";
 
 export default function Weather(){
+
+    let refresh = ()=>{
+        window.location.reload();
+    }
     let[city,setCity]=useState('');
     const [loaded, setLoaded] = useState(false);
     const [weather, setWeather] = useState({});
@@ -36,8 +41,14 @@ export default function Weather(){
     }
     
            let form =( <form onSubmit={handleSubmit}>
+        
                 <input type="search"placeholder="Search city.."className="search"onChange={handleChange}/>
                 <input type="submit"value="Search"className="button"/>
+
+                <button onClick={refresh}className="button">refresh</button>
+                
+               
+            
             </form>);
 
             if(loaded){
@@ -45,14 +56,22 @@ export default function Weather(){
                     <div className="Weather">
                     {form}
                     <h1>{weather.name}</h1>
+                    <p>{moment().format('dddd')},{moment().format('LL')}</p>
                     <h2>{weather.description}</h2>
                   <div className="Rain-icon">
                   <img src={weather.icon} alt={weather.description} />
                   </div>
+                  
                   <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
+                <div className="row">
+                    <div className="col-sm-6">
+          <li className="temp">Temperature: {Math.round(weather.temperature)}°C</li>
+          </div>
+          <div className="col-sm-6">
           <li>Humidity: {weather.humidity}%</li>
           <li>Wind: {weather.wind}km/h</li>
+          </div>
+          </div>
           </ul>
                     </div>
                 );
