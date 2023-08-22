@@ -22,7 +22,9 @@ export default function DailyWeather(props){
                 if(index<6){
                 return (<div className="col-sm-2"key={index}>
                 <ForecastWeather info={dailyForecast} />
-                </div>);}
+                </div>);}else{
+                    return null;
+                }
             })}
             
         </div>
