@@ -1,9 +1,16 @@
 .App{
     max-width: 600px;
-    border:2px solid;
+    border:2px;
     border-radius: 10px;
     margin:0 auto;
     padding-bottom:50px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background:rgb(0,0,0,0.45);
+    color:#fff;
 
+}
+body{
+    background-image: url(/public/snow.jpg);
+    background-repeat: no repeat;
+    background-size: cover;
+    
 }
