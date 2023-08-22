@@ -3,6 +3,7 @@ import "./Weather.css";
 import ReactAnimatedWeather from 'react-animated-weather';
 import axios from 'axios';
 import moment from "moment";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(){
 
@@ -22,7 +23,7 @@ export default function Weather(){
           temperature: response.data.main.temp,
           wind: response.data.wind.speed,
           humidity: response.data.main.humidity,
-          icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+          icon: response.data.weather[0].icon,
           description: response.data.weather[0].description
         });
       }
@@ -44,7 +45,6 @@ export default function Weather(){
         
                 <input type="search"placeholder="Search city.."className="search"onChange={handleChange}/>
                 <input type="submit"value="Search"className="button"/>
-
                 <button onClick={refresh}className="button">refresh</button>
                 
                
@@ -59,7 +59,8 @@ export default function Weather(){
                     <p>{moment().format('dddd')},{moment().format('LL')}</p>
                     <h2>{weather.description}</h2>
                   <div className="Rain-icon">
-                  <img src={weather.icon} alt={weather.description} />
+                    <WeatherIcon code={weather.icon}/>
+                  
                   </div>
                   
                   <ul>
