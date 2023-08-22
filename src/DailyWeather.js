@@ -17,9 +17,13 @@ export default function DailyWeather(props){
     if(loaded){
         return (<div className="DailyWeather">
         <div className="row">
-            <div className="col-sm-3">
-             <ForecastWeather info={forecast[0]}/>
-             </div>
+            {forecast.map(function(dailyForecast,index){
+                if(index<6){
+                return (<div className="col-sm-2"key={index}>
+                <ForecastWeather info={dailyForecast} />
+                </div>);}
+            })}
+            
         </div>
        </div>
     );
@@ -32,5 +36,6 @@ export default function DailyWeather(props){
         axios.get(apiUrl).then(showForecast);
 
     }
+    
    
 }
