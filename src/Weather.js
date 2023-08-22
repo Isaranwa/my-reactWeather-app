@@ -60,12 +60,11 @@ export default function Weather(){
                     <h2>{weather.description}</h2>
                   <div className="Rain-icon">
                     <WeatherIcon code={weather.icon}/>
-                  
                   </div>
                   
                   <ul>
                 <div className="row">
-                    <div className="col-sm-6">
+                 <div className="col-sm-6">
           <li className="temp">Temperature: {Math.round(weather.temperature)}°C</li>
           </div>
           <div className="col-sm-6">
@@ -74,13 +73,15 @@ export default function Weather(){
           </div>
           </div>
           </ul>
-                    </div>
+         
+     </div>
                 );
             }else{
                 return (
                     <div className="Weather">
                     {form}
                     <h1>Search city please...</h1>
+                    
                     <div className="Rain-icon">
             <ReactAnimatedWeather 
                 icon='RAIN'
