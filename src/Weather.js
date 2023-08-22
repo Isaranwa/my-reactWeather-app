@@ -17,9 +17,9 @@ export default function Weather(){
 
 
     function showTemperature(response) {
-        console.log(response.data.name);
         setLoaded(true);
         setWeather({
+          coordinates:response.data.coord,
           name:response.data.name,
           temperature: response.data.main.temp,
           wind: response.data.wind.speed,
@@ -74,7 +74,7 @@ export default function Weather(){
           </div>
           </div>
           </ul>
-         <DailyWeather/>
+         <DailyWeather coordinates={weather.coordinates}/>
      </div>
                 );
             }else{
