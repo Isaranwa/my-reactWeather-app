@@ -79,7 +79,7 @@ export default function Weather(){
                 return (
                     <div className="Weather">
                     {form}
-                    <h1>New York</h1>
+                    <h1>Search city please...</h1>
                     <div className="Rain-icon">
             <ReactAnimatedWeather 
                 icon='RAIN'
