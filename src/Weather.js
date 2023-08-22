@@ -4,6 +4,7 @@ import ReactAnimatedWeather from 'react-animated-weather';
 import axios from 'axios';
 import moment from "moment";
 import WeatherIcon from "./WeatherIcon";
+import DailyWeather from "./DailyWeather";
 
 export default function Weather(){
 
@@ -59,7 +60,7 @@ export default function Weather(){
                     <p>{moment().format('dddd')},{moment().format('LL')}</p>
                     <h2>{weather.description}</h2>
                   <div className="Rain-icon">
-                    <WeatherIcon code={weather.icon}/>
+                    <WeatherIcon code={weather.icon} size={80}/>
                   </div>
                   
                   <ul>
@@ -73,7 +74,7 @@ export default function Weather(){
           </div>
           </div>
           </ul>
-         
+         <DailyWeather/>
      </div>
                 );
             }else{
